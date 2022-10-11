@@ -738,7 +738,7 @@ def convert_diff_to_sd(diffusers_model_path: str, base_ckpt_path: str, output_ck
     print(f"loading sd ckpt from {base_ckpt_path!r}")
     org_model = torch.load(base_ckpt_path)
     org_sd = org_model["state_dict"]
-    print(f"loading sd ckpt done!")
+    print("loading sd ckpt done!")
 
     for ckpt_key, diff_key in KeyMap.items():
         org_sd[ckpt_key] = diff_pipe_unet_sd[diff_key]
